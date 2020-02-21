@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Taxi.Web.Data;
+using Taxi.Web.Helpers;
 using TaxiVer.Web.Data;
 using TaxiVer.Web.Data.Entities;
 using TaxiVer.Web.Helpers;
@@ -55,6 +56,7 @@ namespace TaxiVer.Web
 
             services.AddTransient<SeedDb>();
             services.AddScoped<IUserHelper, UserHelper>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
